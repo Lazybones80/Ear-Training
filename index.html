@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0d12">
+  <title>Resonance — Guitar Ear Training</title>
+  <style id="resonance-inline-styles">:root{--bg:#080b10;--panel:#11161e;--panel2:#151c26;--panel3:#1b2430;--line:#293340;--line-soft:#202833;--text:#eef3f8;--muted:#98a6b7;--dim:#667487;--accent:#65d4b0;--accent-deep:#2aa987;--purple:#a897ff;--orange:#f2b35b;--red:#f47d83;--blue:#79b9ff;--shadow:0 16px 45px rgba(0,0,0,.22);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color-scheme:dark}
+*{box-sizing:border-box}html{background:var(--bg);min-width:300px}body{margin:0;background:radial-gradient(circle at 20% -10%,#14202b 0,#080b10 45%),var(--bg);color:var(--text);font-size:14px;line-height:1.45;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer;color:inherit}.app-shell{max-width:1500px;margin:0 auto;padding:24px 30px 18px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:24px;margin-bottom:24px}.brand-lockup{display:flex;align-items:center;gap:13px}.brand-mark{width:38px;height:38px;border:1px solid #385064;background:#111c27;border-radius:11px;display:flex;align-items:center;justify-content:center;gap:3px;transform:rotate(-9deg)}.brand-mark span{width:3px;border-radius:4px;background:var(--accent);display:block}.brand-mark span:nth-child(1){height:11px}.brand-mark span:nth-child(2){height:20px;background:#b69fff}.brand-mark span:nth-child(3){height:15px;background:var(--orange)}.eyebrow,.card-label,.kicker,.meta-label{font-size:10px;letter-spacing:.16em;font-weight:750;color:var(--dim)}h1,h2,h3,p{margin:0}h1{font-size:21px;letter-spacing:-.03em;line-height:1.1}.top-stats{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:12px}.status-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 10px #65d4b077}.top-divider{height:18px;width:1px;background:var(--line)}.streak-badge{color:#e9d8a4}.streak-badge strong{color:var(--orange)}.tabbar{display:flex;gap:5px;border-bottom:1px solid var(--line);margin-bottom:28px}.tab{position:relative;border:0;background:transparent;color:var(--muted);padding:13px 18px 15px;display:flex;align-items:center;gap:9px;font-weight:650;font-size:13px}.tab:hover{color:var(--text)}.tab.active{color:var(--text)}.tab.active:after{content:"";height:2px;position:absolute;left:13px;right:13px;bottom:-1px;background:var(--accent);border-radius:4px}.tab-icon{font-size:17px;color:var(--dim)}.tab.active .tab-icon{color:var(--accent)}.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start}.section-intro{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:18px}.kicker{color:var(--accent);margin-bottom:7px}.section-intro h2{font-size:28px;letter-spacing:-.045em;line-height:1.1}.section-copy{color:var(--muted);max-width:570px;margin-top:8px}.exercise-meta{text-align:right;padding-top:6px}.exercise-meta strong{font-size:29px;letter-spacing:.06em;color:#e5edf4;display:block;margin-top:2px}.panel{background:rgba(17,22,30,.78);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow)}.panel-toolbar{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:18px}.segmented{display:flex;gap:4px;background:#0c1118;border:1px solid var(--line-soft);border-radius:10px;padding:4px;overflow:auto}.seg{border:0;background:transparent;color:var(--muted);border-radius:7px;padding:8px 12px;font-size:12px;white-space:nowrap}.seg:hover{color:var(--text)}.seg.active{color:#d8fff2;background:#1c3a38;box-shadow:inset 0 0 0 1px #37675e}.context-pill,.assist-label{font-size:11px;color:var(--dim);border:1px solid var(--line-soft);border-radius:999px;padding:6px 9px;white-space:nowrap}.challenge-grid{display:grid;grid-template-columns:minmax(280px,.83fr) minmax(350px,1.17fr);gap:14px}.challenge-card,.visual-card{background:linear-gradient(145deg,#161e28,#10161f);border:1px solid var(--line-soft);border-radius:14px;min-width:0}.challenge-card{padding:21px}.visual-card{padding:18px;overflow:hidden}.prompt-block{display:flex;gap:13px;align-items:flex-start;margin:18px 0 20px}.prompt-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#23302d;color:var(--accent);font-size:20px;flex:0 0 auto}.prompt-block h3{font-size:19px;letter-spacing:-.02em;line-height:1.2}.prompt-block p{color:var(--muted);font-size:12px;margin-top:5px}.audio-row{display:flex;gap:9px;align-items:center}.primary-audio,.secondary-button,.check-button,.next-button,.ghost-button,.tool-button,.reset-button,.direction,.interval-chip{border:0}.primary-audio{display:flex;align-items:center;gap:9px;background:var(--accent);color:#071712;border-radius:9px;padding:11px 13px;font-weight:800;flex:1;min-height:44px}.primary-audio:hover{background:#80e6c7}.primary-audio kbd{font-size:10px;margin-left:auto;background:#248a70;color:#dffff3;border-radius:4px;padding:3px 5px;font-weight:700}.play-triangle{font-size:11px}.secondary-button{background:#212b37;color:#ced8e2;padding:11px 13px;border-radius:9px;min-height:44px}.secondary-button:hover{background:#2b3948}.attempt-tools{margin-top:14px}.tool-button{width:100%;display:flex;align-items:center;gap:11px;text-align:left;background:#121a23;border:1px solid var(--line-soft);padding:10px 11px;border-radius:9px}.tool-button:hover{border-color:#3e566d}.tool-symbol{font-size:16px;color:var(--purple)}.tool-button b{font-size:12px;display:block}.tool-button small{display:block;color:var(--dim);font-size:10px;margin-top:2px}.toggle{margin-left:auto;width:31px;height:18px;border-radius:20px;background:#2a3540;padding:2px;transition:.2s}.toggle i{display:block;width:14px;height:14px;border-radius:50%;background:#8392a0;transition:.2s}.tool-button.on .toggle{background:#326e60}.tool-button.on .toggle i{transform:translateX(13px);background:var(--accent)}.mic-readout{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:11px;padding:8px 2px 0}.mic-readout #mic-cents,.mic-readout #scale-mic-cents,.mic-readout #interval-mic-cents{margin-left:auto;color:var(--accent)}.mic-pulse{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px #f47d8322;animation:pulse 1.3s infinite}.hidden{display:none!important}@keyframes pulse{50%{box-shadow:0 0 0 8px #f47d8300}}.answer-hint{font-size:11px;color:var(--dim);margin:15px 0 10px}.check-button{width:100%;background:#222d3a;color:#dce7ef;padding:11px 12px;border-radius:8px;font-weight:750;border:1px solid #354656}.check-button:hover{background:#2d3b4b;border-color:#496074}.check-button:disabled{opacity:.45;cursor:not-allowed}.check-button span{float:right;color:var(--dim);font-size:10px}.feedback{min-height:24px;margin-top:12px;font-size:12px;color:var(--muted)}.feedback.correct{color:var(--accent)}.feedback.incorrect{color:var(--red)}.visual-header{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:16px}.visual-header h3{font-size:16px;margin-top:4px}.assist-label{color:var(--orange);border-color:#624a27;background:#2c2416}.visual-content{min-height:263px}.fret-wrap{border:1px solid #2b3947;background:#0b1016;border-radius:10px;padding:13px 9px 11px;overflow-x:auto}.fret-title{display:flex;justify-content:space-between;align-items:center;margin:0 2px 10px;color:var(--muted);font-size:11px}.fret-title strong{color:#dbe7ef;font-size:13px}.fretboard{min-width:560px}.fret-numbers{display:grid;grid-template-columns:54px repeat(12,1fr);align-items:center;color:var(--dim);font-size:9px;text-align:center;margin-bottom:5px}.string-row{display:grid;grid-template-columns:54px repeat(12,1fr);align-items:center;height:28px;position:relative}.string-row:after{content:"";position:absolute;left:50px;right:0;top:50%;height:1px;background:#6f7a82}.string-name{color:#a4b3c1;font-size:10px;text-align:left;z-index:1}.fret-cell{height:28px;position:relative;display:grid;place-items:center;border-right:1px solid #26313b;z-index:1}.fret-cell:first-of-type{border-left:2px solid #c7a77a}.fret-dot{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:8px;font-weight:800;background:#1c2a33;color:#8e9fad;border:1px solid #3a4a56;transition:.15s}.fret-cell:hover .fret-dot{border-color:var(--accent);transform:scale(1.12)}.fret-dot.root{background:#a897ff;color:#140d2b;border-color:#d1c8ff}.fret-dot.target{background:var(--accent);color:#071712;border-color:#b4ffe8}.fret-dot.selected{box-shadow:0 0 0 3px #f2b35b77;border-color:var(--orange)}.fret-legend{display:flex;gap:12px;margin-top:10px;color:var(--dim);font-size:10px}.legend-item{display:flex;align-items:center;gap:5px}.legend-dot{width:9px;height:9px;border-radius:50%;display:inline-block}.legend-dot.root{background:var(--purple)}.legend-dot.target{background:var(--accent)}.legend-dot.selected{border:2px solid var(--orange);background:transparent}.degree-answers,.interval-answers{display:grid;gap:6px;margin-top:16px}.degree-answers{grid-template-columns:repeat(7,1fr)}.answer-button{border:1px solid var(--line);background:#151d27;border-radius:8px;padding:9px 4px;color:#aebdcb;font-weight:750;font-size:13px}.answer-button:hover{border-color:#5c768b;color:#fff}.answer-button.selected{background:#243e49;border-color:var(--accent);color:#dffff4}.answer-button.correct{background:#1a473c;border-color:var(--accent);color:var(--accent)}.answer-button.wrong{background:#452630;border-color:var(--red);color:#ffbbc0}.interval-answers{grid-template-columns:repeat(3,1fr)}.interval-chip{text-align:left;padding:8px 9px;border-radius:7px;background:#151d27;border:1px solid var(--line);color:#b2c0cd;font-size:11px;line-height:1.2}.interval-chip small{display:block;color:var(--dim);font-size:9px;margin-top:3px}.interval-chip:hover{border-color:#61778b}.interval-chip.selected{border-color:var(--accent);background:#243e49;color:#e4fff7}.interval-chip.correct{border-color:var(--accent);background:#1a473c;color:var(--accent)}.interval-chip.wrong{border-color:var(--red);background:#452630;color:#ffbbc0}.interval-controls{display:grid;grid-template-columns:1fr auto;gap:9px;margin-top:15px;align-items:end}.interval-controls label,.setting-group label{display:block;font-size:10px;color:var(--dim);letter-spacing:.03em}.interval-controls select,.setting-group select{display:block;width:100%;margin-top:5px;background:#101720;color:#dfe7ef;border:1px solid var(--line);border-radius:7px;padding:9px 8px;font-size:11px;outline:none}.interval-controls select:focus,.setting-group select:focus{border-color:var(--accent)}.direction-toggle{display:flex;background:#101720;border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}.direction{background:transparent;color:var(--dim);border-radius:5px;padding:7px 9px;font-size:11px;white-space:nowrap}.direction.active{background:#2e3850;color:#d8dcff}.ruler{margin-top:4px}.ruler-top{display:flex;justify-content:space-between;align-items:start;margin-bottom:11px}.ruler-top strong{font-size:16px}.ruler-top span{color:var(--orange);font-size:11px}.ruler-track{display:grid;grid-template-columns:repeat(13,1fr);gap:3px;align-items:end;height:90px;border-bottom:1px solid #3c4a56;padding:0 2px}.ruler-step{display:flex;flex-direction:column;align-items:center;justify-content:end;gap:5px;height:100%;position:relative}.ruler-step:after{content:"";width:1px;height:17px;background:#42515e}.ruler-step.root:after{background:var(--purple);height:26px}.ruler-step.target:after{background:var(--accent);height:34px}.ruler-step.target:before{content:"";position:absolute;bottom:31px;width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 15px #65d4b077}.ruler-step.root:before{content:"";position:absolute;bottom:31px;width:9px;height:9px;border-radius:50%;background:var(--purple);box-shadow:0 0 15px #a897ff66}.ruler-label{font-size:9px;color:var(--dim)}.ruler-step.root .ruler-label{color:#c7bcff;font-weight:750}.ruler-step.target .ruler-label{color:#b7f7e2;font-weight:750}.ruler-notes{display:grid;grid-template-columns:repeat(13,1fr);gap:3px;margin-top:7px;text-align:center;color:#7c8b99;font-size:9px}.ruler-notes .highlight{color:#d8fff2;font-weight:750}.scale-diagram{display:flex;gap:7px;align-items:center;justify-content:space-between;margin:5px 0 18px}.scale-node{flex:1;min-width:31px;text-align:center}.scale-node .node-circle{width:32px;height:32px;margin:auto;border-radius:50%;display:grid;place-items:center;background:#1c2832;border:1px solid #394855;color:#9aa9b7;font-weight:800;font-size:11px}.scale-node.root .node-circle{background:#332c58;color:#ded6ff;border-color:#a897ff}.scale-node.target .node-circle{background:#19483d;color:#c8ffec;border-color:var(--accent);box-shadow:0 0 0 3px #65d4b024}.scale-node .degree{display:block;color:var(--dim);font-size:9px;margin-top:5px}.scale-node .note{display:block;color:#adb9c5;font-size:10px;margin-top:2px}.scale-node.root .note,.scale-node.target .note{color:#eef8f5}.resolution-path{display:flex;align-items:center;gap:12px;padding:12px;background:#101720;border-radius:9px;margin-bottom:14px}.resolution-note{display:flex;align-items:center;gap:7px;color:#e6eef5;font-weight:750}.resolution-note span{width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#2a3540;font-size:11px}.resolution-arrow{color:var(--accent);font-size:18px}.next-row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:17px}.ghost-button{background:transparent;color:var(--muted);padding:9px 3px;font-size:12px}.ghost-button:hover{color:var(--text)}.eye-icon{font-size:17px;margin-right:5px;color:var(--purple)}.next-button{background:#232e3a;color:#e8f0f6;border:1px solid #354656;border-radius:8px;padding:10px 15px;font-weight:750}.next-button:hover{background:#2e3d4c}.settings-sidebar{display:grid;gap:14px}.side-card{background:rgba(17,22,30,.82);border:1px solid var(--line);border-radius:14px;padding:17px;box-shadow:0 12px 35px #0000001c}.side-heading{display:flex;justify-content:space-between;align-items:start;margin-bottom:17px}.side-heading h2{font-size:16px;margin-top:4px}.settings-glyph,.stat-emoji{color:var(--accent);font-size:17px}.setting-group{margin-bottom:13px}.setting-group.two-col{display:grid;grid-template-columns:1fr 1fr;gap:9px}.setting-group input[type=range]{width:100%;accent-color:var(--accent);margin:10px 0 0}.range-value{float:right;margin-top:-21px;color:var(--accent);font-size:10px}.switch-row{display:flex;align-items:center;gap:10px;padding-top:4px}.switch-row b{display:block;font-size:11px}.switch-row small{display:block;color:var(--dim);font-size:10px;margin-top:2px}.switch-row input{position:absolute;opacity:0}.switch{margin-left:auto;width:34px;height:19px;border-radius:20px;background:#2b3540;padding:2px}.switch i{display:block;width:15px;height:15px;border-radius:50%;background:#8694a2;transition:.2s}.switch-row input:checked+.switch{background:#326e60}.switch-row input:checked+.switch i{transform:translateX(15px);background:var(--accent)}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:15px}.stat-grid>div{background:#111821;border:1px solid var(--line-soft);border-radius:8px;padding:10px}.stat-grid strong{font-size:19px;display:block;line-height:1.1}.stat-grid span{color:var(--dim);font-size:10px;display:block;margin-top:4px}.progress-track{height:5px;background:#202b36;border-radius:4px;overflow:hidden}.progress-track span{display:block;height:100%;background:linear-gradient(90deg,var(--accent-deep),var(--accent));border-radius:4px;width:0;transition:.3s}.progress-note{color:var(--dim);font-size:10px;margin:8px 0 13px}.reset-button{background:transparent;color:#8494a4;border:1px solid var(--line);width:100%;border-radius:7px;padding:7px;font-size:10px}.reset-button:hover{border-color:var(--red);color:#ffafb2}.tip-card{position:relative;overflow:hidden;min-height:100px}.tip-card p{color:#bbc6d1;font-size:12px;line-height:1.55;max-width:225px;margin-top:10px}.tip-mark{position:absolute;right:17px;bottom:-18px;color:#2b4050;font-family:Georgia,serif;font-size:90px;line-height:1}.footer{display:flex;justify-content:space-between;gap:12px;color:#556473;font-size:10px;padding-top:22px}.footer span:last-child{color:#465461}
+@media(max-width:1050px){.main-grid{grid-template-columns:minmax(0,1fr) 280px}.challenge-grid{grid-template-columns:1fr}.visual-content{min-height:0}.visual-card{min-height:300px}}
+@media(max-width:760px){.app-shell{padding:17px 14px 15px}.topbar{margin-bottom:18px}.top-stats{font-size:0;gap:6px}.top-stats .top-divider,.top-stats #session-label{display:none}.streak-badge{font-size:11px}.tabbar{margin:0 -14px 20px;padding:0 8px;overflow-x:auto;scrollbar-width:none}.tabbar::-webkit-scrollbar{display:none}.tab{padding:11px 12px 13px;font-size:12px;flex:1;justify-content:center;min-width:max-content}.tab.active:after{left:8px;right:8px}.section-intro{margin-bottom:14px}.section-intro h2{font-size:22px}.section-copy{font-size:12px}.exercise-meta{display:none}.panel{padding:12px;border-radius:14px}.panel-toolbar{display:block;margin-bottom:12px}.context-pill{display:inline-block;margin-top:8px;font-size:10px}.challenge-card,.visual-card{padding:15px}.prompt-block{margin:14px 0 16px}.audio-row{align-items:stretch}.primary-audio{padding:10px 11px;font-size:12px}.primary-audio kbd{display:none}.secondary-button{padding:10px 11px;font-size:12px}.challenge-grid{gap:10px}.visual-card{min-height:0}.visual-header{margin-bottom:12px}.assist-label{font-size:9px;padding:5px 7px}.degree-answers{gap:4px}.answer-button{padding:9px 0;font-size:12px}.interval-answers{grid-template-columns:repeat(2,1fr)}.interval-controls{grid-template-columns:1fr}.direction-toggle{justify-content:stretch}.direction{flex:1}.next-row{margin-top:12px}.settings-sidebar{margin-top:10px}.footer{display:block;line-height:1.7}.footer span{display:block}.two-col{grid-template-columns:1fr!important}.fret-wrap{margin:0 -2px}.fretboard{min-width:530px}}
+@media(max-width:390px){.brand-lockup{gap:9px}.brand-mark{width:32px;height:32px}.eyebrow{font-size:8px}.brand-lockup h1{font-size:18px}.section-intro h2{font-size:20px}.tab{padding-left:8px;padding-right:8px}.challenge-card,.visual-card{padding:13px}.prompt-block h3{font-size:17px}.seg{padding:7px 9px}.card-label{font-size:9px}}
+.sequence-pills{display:inline-flex;gap:4px;vertical-align:middle;margin-left:4px}.sequence-pills span{background:#233740;color:#cffff0;border:1px solid #3a665e;border-radius:4px;padding:2px 5px;font-size:10px}.reveal-summary{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#111d23;border:1px solid #284b46;border-radius:9px;padding:10px;margin-bottom:12px}.reveal-main{display:flex;align-items:center;gap:9px}.reveal-note{font-size:25px;font-weight:850;color:var(--accent)}.reveal-main b{display:block;font-size:11px}.reveal-main small{display:block;color:var(--dim);font-size:9px;margin-top:2px}.melody-line{display:flex;align-items:center;gap:5px;color:#c6d3de;font-size:11px}.melody-line span{background:#1d2b36;padding:5px 6px;border-radius:5px}.melody-line i{font-style:normal;color:var(--accent)}.audiation-card{display:flex;gap:10px;align-items:center;background:#151c2a;border:1px dashed #495681;border-radius:9px;padding:12px;margin-bottom:12px;color:#d6d9ff}.audiation-card>span{font-size:25px;color:var(--purple)}.audiation-card p{font-size:11px}.audiation-card small{color:var(--dim)}.hidden-ruler{height:124px;border:1px dashed #364450;border-radius:9px;display:flex;align-items:center;justify-content:center;gap:13px;position:relative;margin-bottom:14px;color:#6f8191;font-weight:800}.hidden-ruler i{height:1px;width:50px;background:#3c4b58}.hidden-ruler small{position:absolute;bottom:14px;font-weight:500;color:#5d6d7b;font-size:10px}.production-tip{grid-column:1/-1;border:1px dashed #3b5060;border-radius:7px;color:#91a1b0;padding:10px;font-size:10px;line-height:1.35}.ruler-arrow{font-size:14px;color:var(--accent);margin:0 5px}
+</style>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div>
+          <div class="eyebrow">GUITAR EAR TRAINING</div>
+          <h1>Resonance</h1>
+        </div>
+      </div>
+      <div class="top-stats" aria-label="Session statistics">
+        <span class="status-dot"></span><span id="session-label">Ready to listen</span>
+        <span class="top-divider"></span>
+        <span class="streak-badge"><span aria-hidden="true">✦</span> <strong id="streak-value">0</strong> streak</span>
+      </div>
+    </header>
+
+    <nav class="tabbar" aria-label="Training sections" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true" aria-controls="pitch-panel" data-tab="pitch"><span class="tab-icon" aria-hidden="true">◉</span><span>Pitch Matching</span></button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="scale-panel" data-tab="scale"><span class="tab-icon" aria-hidden="true">⌁</span><span>Scale Degrees</span></button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="interval-panel" data-tab="interval"><span class="tab-icon" aria-hidden="true">↗</span><span>Intervals</span></button>
+    </nav>
+
+    <main class="main-grid">
+      <section class="workspace">
+        <div class="section-intro">
+          <div>
+            <p class="kicker" id="section-kicker">LISTEN · REPRODUCE · REFINE</p>
+            <h2 id="section-title">Pitch Matching &amp; Audiation</h2>
+            <p class="section-copy" id="section-copy">Hear a note, hold it in your mind, then find it with your voice or on the guitar.</p>
+          </div>
+          <div class="exercise-meta"><span class="meta-label">EXERCISE</span><strong id="exercise-number">01</strong></div>
+        </div>
+
+        <section id="pitch-panel" class="panel tab-panel active" role="tabpanel" tabindex="0" aria-labelledby="pitch-tab">
+          <div class="panel-toolbar">
+            <div class="segmented" role="group" aria-label="Pitch exercise">
+              <button class="seg active" data-pitch-mode="single">Single note</button>
+              <button class="seg" data-pitch-mode="melody">Melody echo</button>
+              <button class="seg" data-pitch-mode="audiation">Audiation</button>
+            </div>
+            <span class="context-pill" id="pitch-context">C major · 4/4</span>
+          </div>
+          <div class="challenge-grid">
+            <div class="challenge-card">
+              <div class="card-label">YOUR LISTENING PROMPT</div>
+              <div class="prompt-block"><span class="prompt-icon" aria-hidden="true">◖</span><div><h3 id="pitch-prompt-title">Match the note</h3><p id="pitch-prompt-copy">Listen, then sing or play the pitch you heard.</p></div></div>
+              <div class="audio-row">
+                <button class="primary-audio" id="pitch-play" aria-label="Play pitch"><span class="play-triangle" aria-hidden="true">▶</span><span>Play note</span><kbd>Space</kbd></button>
+                <button class="secondary-button" id="pitch-replay">↻ <span>Replay</span></button>
+              </div>
+              <div class="attempt-tools">
+                <button class="tool-button" id="mic-toggle"><span class="tool-symbol" aria-hidden="true">◉</span><span><b>Use microphone</b><small>Optional pitch detection</small></span><span class="toggle" aria-hidden="true"><i></i></span></button>
+                <div id="mic-readout" class="mic-readout hidden"><span class="mic-pulse"></span><span id="mic-note">Listening for a pitch…</span><span id="mic-cents"></span></div>
+              </div>
+              <div class="answer-hint" id="pitch-answer-hint">Choose a fretboard note or use the microphone, then check your answer.</div>
+              <button class="check-button" id="pitch-check">Check my answer <span>↵</span></button>
+              <div class="feedback" id="pitch-feedback" aria-live="polite"></div>
+            </div>
+            <div class="visual-card">
+              <div class="visual-header"><div><div class="card-label">GUITAR MAP</div><h3 id="pitch-visual-title">Find your sound</h3></div><span class="assist-label" id="pitch-assist-label">Answer hidden</span></div>
+              <div id="pitch-visual" class="visual-content"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="scale-panel" class="panel tab-panel" role="tabpanel" tabindex="0" aria-labelledby="scale-tab" hidden>
+          <div class="panel-toolbar">
+            <div class="segmented" role="group" aria-label="Scale exercise">
+              <button class="seg active" data-scale-mode="identify">Identify degree</button>
+              <button class="seg" data-scale-mode="sing">Sing a degree</button>
+              <button class="seg" data-scale-mode="resolve">Hear resolution</button>
+            </div>
+            <span class="context-pill" id="scale-context">C major · tonic reference</span>
+          </div>
+          <div class="challenge-grid">
+            <div class="challenge-card">
+              <div class="card-label">RELATIVE PITCH PROMPT</div>
+              <div class="prompt-block"><span class="prompt-icon" aria-hidden="true">⌁</span><div><h3 id="scale-prompt-title">Which degree did you hear?</h3><p id="scale-prompt-copy">First hear the tonic, then identify its relationship.</p></div></div>
+              <div class="audio-row"><button class="primary-audio" id="scale-play"><span class="play-triangle" aria-hidden="true">▶</span><span>Play exercise</span><kbd>Space</kbd></button><button class="secondary-button" id="scale-replay">↻ <span>Replay</span></button></div>
+              <div class="degree-answers" id="degree-answers" aria-label="Scale degree answers"></div>
+              <div class="attempt-tools"><button class="tool-button" id="scale-mic-toggle"><span class="tool-symbol" aria-hidden="true">◉</span><span><b>Sing your answer</b><small>Optional microphone mode</small></span><span class="toggle" aria-hidden="true"><i></i></span></button><div id="scale-mic-readout" class="mic-readout hidden"><span class="mic-pulse"></span><span id="scale-mic-note">Listening for a pitch…</span><span id="scale-mic-cents"></span></div></div>
+              <button class="check-button" id="scale-check">Check degree <span>↵</span></button>
+              <div class="feedback" id="scale-feedback" aria-live="polite"></div>
+            </div>
+            <div class="visual-card"><div class="visual-header"><div><div class="card-label">TONAL CENTRE</div><h3 id="scale-visual-title">Degrees orbit the tonic</h3></div><span class="assist-label" id="scale-assist-label">Answer hidden</span></div><div id="scale-visual" class="visual-content"></div></div>
+          </div>
+        </section>
+
+        <section id="interval-panel" class="panel tab-panel" role="tabpanel" tabindex="0" aria-labelledby="interval-tab" hidden>
+          <div class="panel-toolbar"><div class="segmented" role="group" aria-label="Interval exercise"><button class="seg active" data-interval-mode="melodic">Melodic</button><button class="seg" data-interval-mode="harmonic">Harmonic</button><button class="seg" data-interval-mode="production">Produce</button></div><span class="context-pill" id="interval-context">Beginner set · ascending</span></div>
+          <div class="challenge-grid interval-grid"><div class="challenge-card"><div class="card-label">INTERVAL PROMPT</div><div class="prompt-block"><span class="prompt-icon" aria-hidden="true">↗</span><div><h3 id="interval-prompt-title">Name the interval</h3><p id="interval-prompt-copy">Listen to the two notes and identify their distance.</p></div></div><div class="audio-row"><button class="primary-audio" id="interval-play"><span class="play-triangle" aria-hidden="true">▶</span><span>Play interval</span><kbd>Space</kbd></button><button class="secondary-button" id="interval-replay">↻ <span>Replay</span></button></div><div class="interval-controls"><label>Practice set<select id="interval-set"><option value="beginner">Beginner · 2nds, 3rds, 4th, 5th, octave</option><option value="all">All chromatic intervals</option><option value="custom">Custom selection</option></select></label><div class="direction-toggle" role="group" aria-label="Direction"><button class="direction active" data-direction="up">↑ Up</button><button class="direction" data-direction="down">↓ Down</button></div></div><div id="interval-answers" class="interval-answers" aria-label="Interval answers"></div><div class="attempt-tools"><button class="tool-button" id="interval-mic-toggle"><span class="tool-symbol" aria-hidden="true">◉</span><span><b>Produce the target</b><small>Optional microphone mode</small></span><span class="toggle" aria-hidden="true"><i></i></span></button><div id="interval-mic-readout" class="mic-readout hidden"><span class="mic-pulse"></span><span id="interval-mic-note">Listening for a pitch…</span><span id="interval-mic-cents"></span></div></div><button class="check-button" id="interval-check">Check interval <span>↵</span></button><div class="feedback" id="interval-feedback" aria-live="polite"></div></div><div class="visual-card"><div class="visual-header"><div><div class="card-label">INTERVAL DISTANCE</div><h3 id="interval-visual-title">Hear the space between</h3></div><span class="assist-label" id="interval-assist-label">Answer hidden</span></div><div id="interval-visual" class="visual-content"></div></div></div>
+        </section>
+
+        <div class="next-row"><button class="ghost-button" id="learn-toggle"><span class="eye-icon" aria-hidden="true">◌</span><span id="learn-label">Learning mode</span></button><button class="next-button" id="next-exercise">Next exercise <span aria-hidden="true">→</span></button></div>
+      </section>
+
+      <aside class="settings-sidebar" aria-label="Practice settings">
+        <div class="side-card settings-card"><div class="side-heading"><div><div class="card-label">PRACTICE SETTINGS</div><h2>Make it yours</h2></div><span class="settings-glyph" aria-hidden="true">⚙</span></div><div class="setting-group"><label for="root-select">Reference key / root<select id="root-select"></select></label></div><div class="setting-group two-col"><label for="volume-range">Volume<input id="volume-range" type="range" min="0" max="1" step="0.01"><span class="range-value" id="volume-value">70%</span></label><label for="speed-select">Playback speed<select id="speed-select"><option value="0.75">0.75×</option><option value="1">1×</option><option value="1.25">1.25×</option></select></label></div><div class="setting-group two-col"><label for="difficulty-select">Difficulty<select id="difficulty-select"><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select></label><label for="mode-select">Exercise mode<select id="mode-select"><option value="challenge">Challenge</option><option value="learning">Learning</option></select></label></div><label class="switch-row"><span><b>Visual assistance</b><small>Reveal diagrams after feedback</small></span><input id="assist-toggle" type="checkbox"><span class="switch" aria-hidden="true"><i></i></span></label></div>
+        <div class="side-card stats-card"><div class="side-heading"><div><div class="card-label">YOUR PROGRESS</div><h2>Listen often</h2></div><span class="stat-emoji" aria-hidden="true">◒</span></div><div class="stat-grid"><div><strong id="attempts-value">0</strong><span>Attempts</span></div><div><strong id="accuracy-value">—</strong><span>Accuracy</span></div><div><strong id="completed-value">0</strong><span>Completed</span></div><div><strong id="best-streak-value">0</strong><span>Best streak</span></div></div><div class="progress-track"><span id="progress-fill"></span></div><p class="progress-note" id="progress-note">Complete an exercise to start your streak.</p><button class="reset-button" id="reset-progress">Reset progress</button></div>
+        <div class="side-card tip-card"><div class="card-label">FIELD NOTE</div><p id="tip-copy">Let the sound settle before you look for it. Your first guess is useful data.</p><div class="tip-mark" aria-hidden="true">“</div></div>
+      </aside>
+    </main>
+    <footer class="footer"><span>Web Audio · 12-TET · Standard tuning E–A–D–G–B–E</span><span>Made for focused listening</span></footer>
+  </div>
+  <script>(() => {
+  'use strict';
+
+  const NOTE_NAMES = ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+  const NOTE_FLATS = ['C','D♭','D','E♭','E','F','G♭','G','A♭','A','B♭','B'];
+  const SCALE = [0,2,4,5,7,9,11];
+  const DEGREE_NAMES = ['Tonic','Supertonic','Mediant','Subdominant','Dominant','Submediant','Leading tone'];
+  const INTERVALS = [
+    {id:'m2', name:'Minor 2nd', short:'m2', semitones:1}, {id:'M2',name:'Major 2nd',short:'M2',semitones:2},
+    {id:'m3', name:'Minor 3rd', short:'m3', semitones:3}, {id:'M3',name:'Major 3rd',short:'M3',semitones:4},
+    {id:'P4',name:'Perfect 4th',short:'P4',semitones:5}, {id:'TT',name:'Tritone',short:'TT',semitones:6},
+    {id:'P5',name:'Perfect 5th',short:'P5',semitones:7}, {id:'m6',name:'Minor 6th',short:'m6',semitones:8},
+    {id:'M6',name:'Major 6th',short:'M6',semitones:9}, {id:'m7',name:'Minor 7th',short:'m7',semitones:10},
+    {id:'M7',name:'Major 7th',short:'M7',semitones:11}, {id:'P8',name:'Perfect octave',short:'P8',semitones:12}
+  ];
+  const BEGINNER_INTERVALS = ['m2','M2','m3','M3','P4','P5','P8'];
+  const TUNING = [{name:'E',midi:40},{name:'A',midi:45},{name:'D',midi:50},{name:'G',midi:55},{name:'B',midi:59},{name:'E',midi:64}];
+  const tips = [
+    'Let the sound settle before you look for it. Your first guess is useful data.',
+    'Sing the note quietly in your head before you move your fingers.',
+    'A wrong answer is a map: notice whether the sound was higher or lower.',
+    'Keep the tonic humming internally while you identify a scale degree.',
+    'Intervals are distances, not note names. Listen for the shape between them.'
+  ];
+
+  const defaultSettings = {root:0, volume:.7, speed:1, difficulty:'beginner', mode:'challenge', assist:true};
+  const defaultProgress = {attempts:0, correct:0, completed:0, streak:0, bestStreak:0, byType:{}};
+  const state = {
+    activeTab:'pitch', pitchMode:'single', scaleMode:'identify', intervalMode:'melodic',
+    intervalSet:'beginner', direction:'up', exerciseNo:1, submitted:false,
+    pitch:null, scale:null, interval:null, selectedPitch:[], selectedScale:null, selectedInterval:null,
+    settings:load('resonance-settings', defaultSettings), progress:load('resonance-progress', defaultProgress),
+    mic:{pitch:null,scale:null,interval:null}, micEnabled:{pitch:false,scale:false,interval:false}, audio:null
+  };
+  state.settings = {...defaultSettings, ...(state.settings || {})};
+  state.progress = {...defaultProgress, ...(state.progress || {}), byType:(state.progress && state.progress.byType) || {}};
+
+  const $ = id => document.getElementById(id);
+  const q = selector => document.querySelector(selector);
+  const qa = selector => [...document.querySelectorAll(selector)];
+  function load(key, fallback){ try { const value = JSON.parse(localStorage.getItem(key)); return value ?? fallback; } catch { return fallback; } }
+  function save(){ localStorage.setItem('resonance-settings', JSON.stringify(state.settings)); localStorage.setItem('resonance-progress', JSON.stringify(state.progress)); }
+  function clamp(n,min,max){ return Math.min(max, Math.max(min,n)); }
+  function rand(max){ return Math.floor(Math.random()*max); }
+  function choice(list){ return list[rand(list.length)]; }
+  function noteName(pc, preferFlat=false){ return (preferFlat ? NOTE_FLATS : NOTE_NAMES)[((pc%12)+12)%12]; }
+  function freqForMidi(midi){ return 440 * Math.pow(2, (midi-69)/12); }
+  function midiForRoot(){ return 60 + Number(state.settings.root || 0); }
+  function intervalById(id){ return INTERVALS.find(i => i.id === id) || INTERVALS[0]; }
+  function degreeNote(degree){ return (Number(state.settings.root)+SCALE[degree-1])%12; }
+  function isRevealed(){ return state.submitted || (state.settings.mode === 'learning' && state.settings.assist); }
+  function updateSessionLabel(text){ $('session-label').textContent = text; }
+
+  function initAudio(){
+    if (!state.audio){
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if (!Ctx) return null;
+      state.audio = {ctx:new Ctx(), nodes:[]};
+    }
+    if (state.audio.ctx.state === 'suspended') state.audio.ctx.resume();
+    return state.audio;
+  }
+  function stopAudio(){
+    if (!state.audio) return;
+    state.audio.nodes.forEach(node => { try { node.stop(); } catch {} });
+    state.audio.nodes = [];
+  }
+  function playTones(notes, options={}){
+    const audio = initAudio();
+    if (!audio) { updateSessionLabel('Audio unavailable in this browser'); return; }
+    stopAudio();
+    const ctx = audio.ctx, now = ctx.currentTime + .035, speed = Number(state.settings.speed) || 1;
+    const spacing = (options.spacing || .58) / speed, duration = (options.duration || .46) / speed;
+    notes.forEach((midi, index) => {
+      const start = now + (options.simultaneous ? 0 : index*spacing);
+      const end = start + duration;
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      const filter = ctx.createBiquadFilter();
+      osc.type = options.type || 'triangle';
+      osc.frequency.setValueAtTime(freqForMidi(midi), start);
+      filter.type = 'lowpass'; filter.frequency.setValueAtTime(2600, start);
+      const volume = clamp(Number(state.settings.volume),0,1) * (options.gain || .16);
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(Math.max(.0002, volume), start+.025);
+      gain.gain.exponentialRampToValueAtTime(.0001, end);
+      osc.connect(filter).connect(gain).connect(ctx.destination);
+      osc.start(start); osc.stop(end+.03); audio.nodes.push(osc);
+    });
+    const ms = ((options.simultaneous ? duration : (notes.length-1)*spacing+duration)+.06)*1000;
+    updateSessionLabel(options.label || 'Listening…');
+    window.setTimeout(() => { if (state.audio && state.audio.nodes.length) updateSessionLabel('Ready to answer'); }, ms);
+  }
+
+  function generatePitch(){
+    const root = midiForRoot();
+    const mode = state.pitchMode;
+    const count = mode === 'single' ? 1 : (mode === 'melody' ? ({beginner:2,intermediate:3,advanced:4}[state.settings.difficulty] || 2) : 2);
+    const scalePool = SCALE.map(s => root+s);
+    let notes;
+    if (mode === 'single') notes = [root + rand(12)];
+    else if (mode === 'melody') notes = Array.from({length:count}, (_,i) => scalePool[(rand(scalePool.length) + (i ? 1 : 0)) % scalePool.length]);
+    else { const ref = root + choice([0,2,4,5,7]); notes = [ref, ref + choice([2,4,5,7])]; }
+    state.pitch = {notes, target:notes.at(-1), submitted:false}; state.selectedPitch=[]; state.submitted=false;
+    renderPitch();
+  }
+
+  function generateScale(){
+    const root = midiForRoot();
+    let degree = choice([1,2,3,4,5,6,7]);
+    if (state.scaleMode === 'resolve') degree = choice([2,4,5,7]);
+    if (state.scaleMode === 'sing' && state.settings.difficulty === 'beginner') degree = choice([2,3,5,6]);
+    const target = root + SCALE[degree-1];
+    let notes = [root,target], resolution = null;
+    if (state.scaleMode === 'resolve') { const end = (degree === 4 ? 3 : 1); resolution = [degree,end]; notes = [root+SCALE[degree-1],root+SCALE[end-1]]; }
+    state.scale = {degree,target,notes,resolution,submitted:false}; state.selectedScale=null; state.submitted=false; renderScale();
+  }
+
+  function generateInterval(){
+    const allowed = state.intervalSet === 'all' ? INTERVALS : (state.intervalSet === 'custom' ? INTERVALS.slice(0, Math.max(3, state.settings.difficulty==='advanced'?12:6)) : BEGINNER_INTERVALS.map(intervalById));
+    let item = choice(allowed);
+    if (state.settings.difficulty === 'beginner' && state.intervalSet === 'beginner') item = choice(allowed);
+    const root = midiForRoot();
+    const target = state.direction === 'up' ? root + item.semitones : root - item.semitones;
+    state.interval = {item,root,target,direction:state.direction,submitted:false}; state.selectedInterval=null; state.submitted=false; renderInterval();
+  }
+
+  function fretboardHTML({rootMidi,targetMidi,selectedMidi=null,hideTarget=false,showOctaves=true}){
+    const rootPc = ((rootMidi%12)+12)%12, targetPc = ((targetMidi%12)+12)%12;
+    let html = '<div class="fret-wrap"><div class="fret-title"><span>STANDARD TUNING · FRETS 0–12</span><strong>Tap a fret to hear it</strong></div><div class="fretboard"><div class="fret-numbers"><span></span>';
+    for(let f=0;f<=12;f++) html += `<span>${f}</span>`;
+    html += '</div>';
+    TUNING.forEach((string,sIdx) => {
+      html += `<div class="string-row"><span class="string-name">${string.name}${sIdx===0?' · low':''}</span>`;
+      for(let fret=0;fret<=12;fret++){
+        const midi = string.midi+fret, pc = midi%12;
+        const isRoot = pc===rootPc, isTarget = !hideTarget && pc===targetPc && (!isRoot || targetPc!==rootPc);
+        const classes = ['fret-dot']; if(isRoot) classes.push('root'); if(isTarget) classes.push('target'); if(selectedMidi!==null && Number(selectedMidi)===midi) classes.push('selected');
+        const label = isRoot ? 'R' : (isTarget ? 'T' : noteName(pc));
+        html += `<button class="fret-cell" data-midi="${midi}" data-note="${noteName(pc)}" aria-label="${string.name} string fret ${fret}, ${noteName(pc)}"><span class="${classes.join(' ')}">${label}</span></button>`;
+      }
+      html += '</div>';
+    });
+    html += '</div><div class="fret-legend"><span class="legend-item"><i class="legend-dot root"></i>Root</span><span class="legend-item"><i class="legend-dot target"></i>Target</span><span class="legend-item"><i class="legend-dot selected"></i>Your pick</span></div></div>';
+    return html;
+  }
+
+  function renderPitch(){
+    const e = state.pitch;
+    const reveal = isRevealed();
+    const title = state.pitchMode==='single' ? 'Match the note' : state.pitchMode==='melody' ? 'Echo the melody' : 'Imagine what comes next';
+    const copy = state.pitchMode==='single' ? 'Listen, then sing or play the pitch you heard.' : state.pitchMode==='melody' ? `Listen to ${e.notes.length} notes, then reproduce the phrase.` : 'Hear the reference, hold the next sound in your mind, then play it.';
+    $('pitch-prompt-title').textContent=title; $('pitch-prompt-copy').textContent=copy; $('pitch-context').textContent=`${noteName(state.settings.root)} major · ${state.pitchMode==='melody'?e.notes.length+' notes':'4/4'}`;
+    $('pitch-visual-title').textContent = reveal ? `Target · ${noteName(e.target%12)}` : 'Find your sound'; $('pitch-assist-label').textContent = reveal ? 'Explanation shown' : 'Answer hidden';
+    const seq = state.selectedPitch.length ? `<div class="sequence-pills">Your notes: ${state.selectedPitch.map(m=>`<span>${noteName(m%12)}</span>`).join('')}</div>` : '';
+    $('pitch-answer-hint').innerHTML = state.pitchMode==='melody' ? `Tap ${e.notes.length} fretboard notes in order. ${seq}` : `Choose a fretboard note${state.micEnabled.pitch?' or sing into the mic':''}, then check your answer. ${seq}`;
+    $('pitch-visual').innerHTML = reveal ? `<div class="reveal-summary"><div class="reveal-main"><span class="reveal-note">${noteName(e.target%12)}</span><div><b>${freqForMidi(e.target).toFixed(1)} Hz</b><small>${state.pitchMode==='melody'?'Final note of the phrase':'Target pitch'}</small></div></div>${state.pitchMode==='melody'?`<div class="melody-line">${e.notes.map(n=>`<span>${noteName(n%12)}</span>`).join('<i>→</i>')}</div>`:''}</div>${fretboardHTML({rootMidi:midiForRoot(),targetMidi:e.target,selectedMidi:state.selectedPitch.at(-1),hideTarget:false})}` : `${state.pitchMode==='audiation'?'<div class="audiation-card"><span>◌</span><p>The target is waiting in silence.<br><small>Trust the sound you imagine.</small></p></div>':''}${fretboardHTML({rootMidi:midiForRoot(),targetMidi:e.target,selectedMidi:state.selectedPitch.at(-1),hideTarget:true})}`;
+    bindFretboard($('pitch-visual'),'pitch');
+    $('pitch-check').disabled = state.selectedPitch.length===0 && !state.mic[state.activeTab];
+  }
+
+  function scaleAnswers(){
+    $('degree-answers').innerHTML = Array.from({length:7},(_,i)=>`<button class="answer-button ${state.selectedScale===i+1?'selected':''}" data-degree="${i+1}"><strong>${i+1}</strong><small>${DEGREE_NAMES[i]}</small></button>`).join('');
+    qa('#degree-answers .answer-button').forEach(btn=>btn.addEventListener('click',()=>{state.selectedScale=Number(btn.dataset.degree);renderScale();}));
+  }
+  function renderScale(){
+    const e=state.scale,reveal=isRevealed(), root=midiForRoot(), targetPc=degreeNote(e.degree);
+    $('scale-prompt-title').textContent = state.scaleMode==='identify' ? 'Which degree did you hear?' : state.scaleMode==='sing' ? `Sing degree ${e.degree}` : `Where did it resolve?`;
+    $('scale-prompt-copy').textContent = state.scaleMode==='identify' ? 'First hear the tonic, then identify its relationship.' : state.scaleMode==='sing' ? `Hear the tonic, then sing the ${DEGREE_NAMES[e.degree-1].toLowerCase()}.` : `${e.resolution[0]} → ${e.resolution[1]} · listen for the tonal pull.`;
+    $('scale-context').textContent=`${noteName(state.settings.root)} major · ${state.scaleMode==='resolve'?'tonal function':'tonic reference'}`;
+    $('scale-visual-title').textContent = reveal ? `${noteName(targetPc)} · degree ${e.degree}` : 'Degrees orbit the tonic'; $('scale-assist-label').textContent=reveal?'Explanation shown':'Answer hidden';
+    scaleAnswers();
+    let diagram='<div class="scale-diagram">';
+    for(let i=1;i<=7;i++){ const cls=`scale-node ${i===1?'root':''} ${reveal&&i===e.degree?'target':''}`; const displayNote = reveal || i===1 ? noteName(degreeNote(i)) : '•'; diagram+=`<div class="${cls}"><span class="node-circle">${i}</span><span class="degree">${i===1?'TONIC':DEGREE_NAMES[i-1].toUpperCase()}</span><span class="note">${displayNote}</span></div>`; }
+    diagram+='</div>';
+    if(state.scaleMode==='resolve' && reveal) diagram+=`<div class="resolution-path"><div class="resolution-note"><span>${e.resolution[0]}</span>${DEGREE_NAMES[e.resolution[0]-1]}</div><div class="resolution-arrow">→</div><div class="resolution-note"><span>${e.resolution[1]}</span>${DEGREE_NAMES[e.resolution[1]-1]}</div></div>`;
+    $('scale-visual').innerHTML=diagram+fretboardHTML({rootMidi:root,targetMidi:e.target,hideTarget:!reveal,selectedMidi:null}); bindFretboard($('scale-visual'),'scale');
+    $('scale-check').textContent=state.scaleMode==='resolve'?'Check resolution ↵':'Check degree ↵'; $('scale-check').disabled=!state.selectedScale && !state.micEnabled.scale;
+  }
+
+  function intervalAnswers(){
+    if(state.intervalMode==='production'){ $('interval-answers').innerHTML='<div class="production-tip">Select the target position on the fretboard, or use the microphone to reproduce the distance.</div>'; return; }
+    const allowedIds = state.intervalSet==='all' ? INTERVALS.map(i=>i.id) : state.intervalSet==='custom' ? INTERVALS.slice(0, state.settings.difficulty==='advanced'?12:6).map(i=>i.id) : BEGINNER_INTERVALS;
+    $('interval-answers').innerHTML=INTERVALS.filter(i=>allowedIds.includes(i.id)).map(i=>`<button class="interval-chip ${state.selectedInterval===i.id?'selected':''}" data-interval="${i.id}">${i.name}<small>${i.semitones} semitone${i.semitones===1?'':'s'}</small></button>`).join('');
+    qa('#interval-answers .interval-chip').forEach(btn=>btn.addEventListener('click',()=>{state.selectedInterval=btn.dataset.interval;renderInterval();}));
+  }
+  function renderInterval(){
+    const e=state.interval,reveal=isRevealed(), rootPc=e.root%12,targetPc=e.target%12;
+    $('interval-prompt-title').textContent=state.intervalMode==='production'?`Produce a ${e.item.name}`:'Name the interval';
+    $('interval-prompt-copy').textContent=state.intervalMode==='production'?`Play or sing ${e.item.name.toLowerCase()} ${e.direction==='up'?'above':'below'} ${noteName(rootPc)}.`:`Listen to the two notes ${e.direction==='up'?'in sequence':'descending'} and identify their distance.`;
+    $('interval-context').textContent=`${state.settings.difficulty[0].toUpperCase()+state.settings.difficulty.slice(1)} set · ${e.direction==='up'?'ascending':'descending'}`;
+    $('interval-visual-title').textContent=reveal?`${e.item.name} · ${e.item.semitones} semitones`:'Hear the space between'; $('interval-assist-label').textContent=reveal?'Explanation shown':'Answer hidden';
+    intervalAnswers();
+    let visual='';
+    if(reveal){
+      visual+=`<div class="ruler"><div class="ruler-top"><strong>${noteName(rootPc)} <span class="ruler-arrow">${e.direction==='up'?'→':'←'}</span> ${noteName(targetPc)}</strong><span>${e.direction==='up'?'↑':'↓'} ${e.item.semitones} semitones · ${e.item.name}</span></div><div class="ruler-track">`;
+      for(let s=0;s<=12;s++){const cls=`ruler-step ${s===0?'root':''} ${s===e.item.semitones?'target':''}`; visual+=`<div class="${cls}"><span class="ruler-label">${s}</span></div>`;} visual+='</div><div class="ruler-notes">';
+      for(let s=0;s<=12;s++) visual+=`<span class="${s===0||s===e.item.semitones?'highlight':''}">${noteName((rootPc+(e.direction==='up'?s:-s)+120)%12)}</span>`; visual+='</div></div>';
+    } else visual+='<div class="hidden-ruler"><span>0</span><i></i><span>?</span><i></i><span>12</span><small>Semitone map appears after your answer</small></div>';
+    $('interval-visual').innerHTML=visual+fretboardHTML({rootMidi:e.root,targetMidi:e.target,hideTarget:!reveal,selectedMidi:null}); bindFretboard($('interval-visual'),'interval'); $('interval-check').textContent=state.intervalMode==='production'?'Check pitch ↵':'Check interval ↵'; $('interval-check').disabled=!state.selectedInterval && !state.micEnabled.interval && state.intervalMode!=='production';
+  }
+
+  function bindFretboard(container,type){
+    qa('#'+container.id+' .fret-cell').forEach(cell=>cell.addEventListener('click',()=>{
+      const midi=Number(cell.dataset.midi); playTones([midi],{label:`${cell.dataset.note} · ${freqForMidi(midi).toFixed(1)} Hz`,duration:.32,gain:.13});
+      if(type==='pitch'){ if(state.pitchMode==='melody' && state.selectedPitch.length<state.pitch.notes.length) state.selectedPitch.push(midi); else state.selectedPitch=[midi]; renderPitch(); }
+      else if(type==='interval'){ state.selectedInterval=null; state.interval.selectedMidi=midi; renderInterval(); }
+      else if(type==='scale'){ state.scale.selectedMidi=midi; renderScale(); }
+    }));
+  }
+
+  function pitchCents(detected,targetMidi){ if(!detected) return null; const target=freqForMidi(targetMidi); const oct=Math.round(Math.log2(detected/target)); return 1200*Math.log2(detected/(target*Math.pow(2,oct))); }
+  function autoCorrelate(buffer,sampleRate){
+    let rms=0; for(let i=0;i<buffer.length;i++) rms+=buffer[i]*buffer[i]; rms=Math.sqrt(rms/buffer.length); if(rms<.012) return -1;
+    let bestOffset=-1,bestCorr=0; const size=buffer.length;
+    for(let offset=8;offset<size/2;offset++){let corr=0; for(let i=0;i<size/2;i++) corr+=buffer[i]*buffer[i+offset]; corr/=size/2; if(corr>bestCorr){bestCorr=corr;bestOffset=offset;}}
+    return bestOffset>0 && bestCorr>.01 ? sampleRate/bestOffset : -1;
+  }
+  async function toggleMic(type){
+    if(state.micEnabled[type]){ stopMic(type); return; }
+    if(!navigator.mediaDevices?.getUserMedia){ updateSessionLabel('Microphone is not supported; use the fretboard'); return; }
+    try{
+      const stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+      const Ctx=window.AudioContext||window.webkitAudioContext; const ctx=new Ctx(); const source=ctx.createMediaStreamSource(stream); const analyser=ctx.createAnalyser(); analyser.fftSize=2048; source.connect(analyser); const buffer=new Float32Array(analyser.fftSize);
+      state.micEnabled[type]=true; state.mic[type]={stream,ctx,analyser,buffer,frequency:null,midi:null,cents:null}; micIds(type).toggle.classList.add('on'); micIds(type).readout.classList.remove('hidden'); updateSessionLabel('Microphone listening…');
+      const tick=()=>{ if(!state.micEnabled[type]) return; const mic=state.mic[type]; analyser.getFloatTimeDomainData(buffer); const f=autoCorrelate(buffer,ctx.sampleRate); if(f>45&&f<1400){const midi=69+12*Math.log2(f/440); mic.frequency=f;mic.midi=Math.round(midi); const target=type==='pitch'?state.pitch?.target:type==='scale'?state.scale?.target:state.interval?.target; mic.cents=target!==undefined?pitchCents(f,target):null; const ids=micIds(type); ids.note.textContent=`${noteName(Math.round(midi)%12)} · ${f.toFixed(1)} Hz`; ids.cents.textContent=mic.cents===null?'':`${mic.cents>0?'+':''}${mic.cents.toFixed(0)} cents`; if(type==='pitch') $('pitch-check').disabled=false; if(type==='scale') $('scale-check').disabled=false; if(type==='interval') $('interval-check').disabled=false; } window.requestAnimationFrame(tick);}; tick();
+    }catch(err){ updateSessionLabel('Microphone permission was declined · fretboard remains available'); state.micEnabled[type]=false; }
+  }
+  function micIds(type){ return type==='pitch' ? {toggle:$('mic-toggle'),readout:$('mic-readout'),note:$('mic-note'),cents:$('mic-cents')} : {toggle:$(`${type}-mic-toggle`),readout:$(`${type}-mic-readout`),note:$(`${type}-mic-note`),cents:$(`${type}-mic-cents`)}; }
+  function stopMic(type){ const mic=state.mic[type]; if(mic){mic.stream?.getTracks().forEach(t=>t.stop());mic.ctx?.close();} state.micEnabled[type]=false; state.mic[type]=null; const ids=micIds(type); ids.toggle?.classList.remove('on'); ids.readout?.classList.add('hidden'); }
+
+  function submit(type){
+    if(state.submitted) return;
+    let correct=false, explanation='';
+    if(type==='pitch'){
+      const e=state.pitch; const mic=state.mic.pitch; const selected=state.selectedPitch;
+      if(state.pitchMode==='melody' && selected.length===e.notes.length) correct=selected.every((m,i)=>m%12===e.notes[i]%12);
+      else if(selected.length) correct=selected.at(-1)%12===e.target%12;
+      if(!selected.length && mic?.frequency) correct=Math.abs(mic.cents||999)<=50;
+      explanation=correct?'Your pitch landed in the target’s pitch class.':'Listen for whether your attempt was higher or lower, then try the same sound again.';
+    } else if(type==='scale'){
+      const e=state.scale; const mic=state.mic.scale; const picked=state.selectedScale;
+      if(state.scaleMode==='resolve') correct=picked===e.resolution[0] || (picked===e.resolution[1] && e.resolution[1]===1);
+      else if(picked) correct=picked===e.degree;
+      else if(mic?.frequency) correct=Math.abs(mic.cents||999)<=55;
+      explanation=correct?`${e.degree} is the ${DEGREE_NAMES[e.degree-1].toLowerCase()} in ${noteName(state.settings.root)} major.`:`The target was degree ${e.degree}, the ${DEGREE_NAMES[e.degree-1].toLowerCase()}; hear how it relates to the tonic.`;
+    } else {
+      const e=state.interval; const mic=state.mic.interval;
+      if(state.intervalMode==='production'){
+        const pickedMidi=e.selectedMidi; correct=pickedMidi!==undefined ? Math.abs((pickedMidi-e.target)%12)===0 : !!(mic?.frequency && Math.abs(mic.cents||999)<=55);
+      } else if(state.selectedInterval) correct=state.selectedInterval===e.item.id;
+      explanation=correct?`${e.item.name} spans ${e.item.semitones} semitones ${e.direction==='up'?'up':'down'}.`:`Count the space from the root: the target is ${e.item.semitones} semitone${e.item.semitones===1?'':'s'} ${e.direction==='up'?'above':'below'} it.`;
+    }
+    state.submitted=true; record(type,correct); renderCurrent();
+    const fb=$(type==='pitch'?'pitch-feedback':type==='scale'?'scale-feedback':'interval-feedback'); fb.className=`feedback ${correct?'correct':'incorrect'}`; fb.innerHTML=`<b>${correct?'Correct · ':'Not quite · '}</b>${explanation}`;
+    updateSessionLabel(correct?'Nice listening · ready for the next one':'Keep listening · the map shows the answer');
+  }
+  function record(type,correct){ const p=state.progress; p.attempts++; p.completed++; if(correct){p.correct++;p.streak++;p.bestStreak=Math.max(p.bestStreak,p.streak);} else p.streak=0; p.byType[type]=p.byType[type]||{attempts:0,correct:0}; p.byType[type].attempts++; if(correct)p.byType[type].correct++; save(); updateStats(); }
+  function updateStats(){ const p=state.progress; $('attempts-value').textContent=p.attempts; $('accuracy-value').textContent=p.attempts?`${Math.round(p.correct/p.attempts*100)}%`:'—'; $('completed-value').textContent=p.completed; $('best-streak-value').textContent=p.bestStreak; $('streak-value').textContent=p.streak; $('progress-fill').style.width=`${p.attempts?Math.round(p.correct/p.attempts*100):0}%`; $('progress-note').textContent=p.attempts?`${p.correct} correct · ${p.streak} current streak`:'Complete an exercise to start your streak.'; }
+
+  function renderCurrent(){ if(state.activeTab==='pitch') renderPitch(); else if(state.activeTab==='scale') renderScale(); else renderInterval(); }
+  function switchTab(tab){ state.activeTab=tab; qa('.tab').forEach(btn=>{const active=btn.dataset.tab===tab;btn.classList.toggle('active',active);btn.setAttribute('aria-selected',active);}); qa('.tab-panel').forEach(panel=>{const active=panel.id===`${tab}-panel`;panel.classList.toggle('active',active);panel.hidden=!active;}); const labels={pitch:['LISTEN · REPRODUCE · REFINE','Pitch Matching & Audiation','Hear a note, hold it in your mind, then find it with your voice or on the guitar.'],scale:['RELATIVE PITCH · TONAL FUNCTION','Relative Pitch & Scale Degrees','Build a tonal centre, then hear how every scale degree leans into it.'],interval:['DISTANCE · DIRECTION · SOUND','Interval Recognition','Name the space between two notes, then see the distance on the guitar.']}; const l=labels[tab]; $('section-kicker').textContent=l[0];$('section-title').textContent=l[1];$('section-copy').textContent=l[2]; state.submitted=false; renderCurrent(); }
+  function nextExercise(){ state.exerciseNo++; $('exercise-number').textContent=String(state.exerciseNo).padStart(2,'0'); state.submitted=false; if(state.activeTab==='pitch')generatePitch(); else if(state.activeTab==='scale')generateScale(); else generateInterval(); updateSessionLabel('New exercise · listen first'); }
+  function configure(){
+    $('root-select').innerHTML=NOTE_NAMES.map((n,i)=>`<option value="${i}">${n}</option>`).join(''); $('root-select').value=state.settings.root;
+    $('volume-range').value=state.settings.volume; $('volume-value').textContent=`${Math.round(state.settings.volume*100)}%`; $('speed-select').value=state.settings.speed; $('difficulty-select').value=state.settings.difficulty; $('mode-select').value=state.settings.mode; $('assist-toggle').checked=state.settings.assist; $('learn-label').textContent=state.settings.mode==='learning'?'Challenge mode':'Learning mode'; updateStats();
+  }
+  function bind(){
+    qa('.tab').forEach(btn=>btn.addEventListener('click',()=>switchTab(btn.dataset.tab)));
+    qa('[data-pitch-mode]').forEach(btn=>btn.addEventListener('click',()=>{qa('[data-pitch-mode]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.pitchMode=btn.dataset.pitchMode;generatePitch();}));
+    qa('[data-scale-mode]').forEach(btn=>btn.addEventListener('click',()=>{qa('[data-scale-mode]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.scaleMode=btn.dataset.scaleMode;generateScale();}));
+    qa('[data-interval-mode]').forEach(btn=>btn.addEventListener('click',()=>{qa('[data-interval-mode]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.intervalMode=btn.dataset.intervalMode;generateInterval();}));
+    $('pitch-play').addEventListener('click',()=>{const notes=state.pitchMode==='audiation'?[state.pitch.notes[0]]:state.pitch.notes;playTones(notes,{label:state.pitchMode==='melody'?'Melody playing…':'Note playing…'});}); $('pitch-replay').addEventListener('click',()=>$('pitch-play').click());
+    $('scale-play').addEventListener('click',()=>{const notes=state.scaleMode==='identify'?[state.scale.notes[0],state.scale.notes[1]]:state.scaleMode==='sing'?[state.scale.notes[0]]:state.scale.notes;playTones(notes,{label:state.scaleMode==='resolve'?'Resolution playing…':'Tonic reference playing…'});}); $('scale-replay').addEventListener('click',()=>$('scale-play').click());
+    $('interval-play').addEventListener('click',()=>{const e=state.interval; const notes=state.intervalMode==='production'?[e.root]:[e.root,e.target];playTones(notes,{simultaneous:state.intervalMode==='harmonic',label:state.intervalMode==='harmonic'?'Interval sounding…':'Interval playing…'});}); $('interval-replay').addEventListener('click',()=>$('interval-play').click());
+    $('pitch-check').addEventListener('click',()=>submit('pitch')); $('scale-check').addEventListener('click',()=>submit('scale')); $('interval-check').addEventListener('click',()=>submit('interval')); $('next-exercise').addEventListener('click',nextExercise);
+    $('mic-toggle').addEventListener('click',()=>toggleMic('pitch'));$('scale-mic-toggle').addEventListener('click',()=>toggleMic('scale'));$('interval-mic-toggle').addEventListener('click',()=>toggleMic('interval'));
+    $('learn-toggle').addEventListener('click',()=>{state.settings.mode=state.settings.mode==='learning'?'challenge':'learning';save();configure();renderCurrent();});
+    $('root-select').addEventListener('change',e=>{state.settings.root=Number(e.target.value);save();nextExercise();}); $('volume-range').addEventListener('input',e=>{state.settings.volume=Number(e.target.value);$('volume-value').textContent=`${Math.round(state.settings.volume*100)}%`;save();}); $('speed-select').addEventListener('change',e=>{state.settings.speed=Number(e.target.value);save();}); $('difficulty-select').addEventListener('change',e=>{state.settings.difficulty=e.target.value;save();nextExercise();}); $('mode-select').addEventListener('change',e=>{state.settings.mode=e.target.value;save();configure();renderCurrent();}); $('assist-toggle').addEventListener('change',e=>{state.settings.assist=e.target.checked;save();renderCurrent();}); $('interval-set').addEventListener('change',e=>{state.intervalSet=e.target.value;generateInterval();}); qa('[data-direction]').forEach(btn=>btn.addEventListener('click',()=>{qa('[data-direction]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');state.direction=btn.dataset.direction;generateInterval();}));
+    $('reset-progress').addEventListener('click',()=>{if(confirm('Reset all Resonance progress?')){state.progress=structuredClone(defaultProgress);save();updateStats();}});
+    document.addEventListener('keydown',e=>{if(e.target.matches('input,select,button,textarea')) return; if(e.code==='Space'){e.preventDefault();if(state.activeTab==='pitch')$('pitch-play').click();else if(state.activeTab==='scale')$('scale-play').click();else $('interval-play').click();}if(e.key==='Enter'){if(state.activeTab==='pitch')$('pitch-check').click();else if(state.activeTab==='scale')$('scale-check').click();else $('interval-check').click();}});
+  }
+  function start(){ configure(); bind(); $('exercise-number').textContent='01'; generatePitch(); generateScale(); generateInterval(); switchTab('pitch'); $('tip-copy').textContent=choice(tips); }
+  start();
+})();
+</script>
+</body>
+</html>
+
